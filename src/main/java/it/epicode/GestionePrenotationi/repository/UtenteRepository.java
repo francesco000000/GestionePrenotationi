@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface UtenteRepository extends JpaRepository<Utente,Integer> {
-    @Query("SELECT p FROM Utente u JOIN u.postazioni p WHERE p.tipoPostazione = :tipoPostazione AND p.citta = :citta")
+    @Query("SELECT p FROM Utente u JOIN u.postazioni p WHERE p.tipoPostazione = :tipoPostazione AND p.edificio.citta = :citta")
     List<Postazione> trovaPostazioniPerTipoECittaPerUtente(TipoPostazione tipoPostazione, String citta);
 
 

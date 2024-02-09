@@ -8,11 +8,14 @@ import it.epicode.GestionePrenotationi.service.EdificioService;
 import it.epicode.GestionePrenotationi.service.PostazioneService;
 import it.epicode.GestionePrenotationi.service.PrenotazioneService;
 import it.epicode.GestionePrenotationi.service.UtenteService;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
+
+import java.util.logging.Logger;
 
 @Component
 @Order(1)
@@ -25,6 +28,7 @@ public class Runner implements CommandLineRunner {
     private PrenotazioneService prenotazioneService;
     @Autowired
     private UtenteService utenteService;
+
     @Override
     public void run(String... args) throws Exception {
 
